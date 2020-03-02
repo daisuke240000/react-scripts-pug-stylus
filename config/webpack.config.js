@@ -367,7 +367,7 @@ module.exports = function(webpackEnv) {
                     };
                   }
                 })(),
-                useEslintrc: true,
+                useEslintrc: false,
                 // @remove-on-eject-end
               },
               loader: require.resolve('eslint-loader'),
@@ -402,7 +402,7 @@ module.exports = function(webpackEnv) {
                   'babel-preset-react-app/webpack-overrides'
                 ),
                 // @remove-on-eject-begin
-                babelrc: true,
+                babelrc: false,
                 configFile: false,
                 presets: [require.resolve('babel-preset-react-app')],
                 // Make sure we have a unique cache identifier, erring on the
@@ -434,8 +434,6 @@ module.exports = function(webpackEnv) {
                       },
                     },
                   ],
-                  require.resolve('babel-plugin-transform-react-pug'),
-                  require.resolve('babel-plugin-transform-react-jsx')
                 ],
                 // This is a feature of `babel-loader` for webpack (not Babel itself).
                 // It enables caching results in ./node_modules/.cache/babel-loader/
@@ -453,7 +451,7 @@ module.exports = function(webpackEnv) {
               exclude: /@babel(?:\/|\\{1,2})runtime/,
               loader: require.resolve('babel-loader'),
               options: {
-                babelrc: true,
+                babelrc: false,
                 configFile: false,
                 compact: false,
                 presets: [
