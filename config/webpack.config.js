@@ -59,7 +59,6 @@ const cssModuleRegex = /\.module\.css$/;
 const sassRegex = /\.(scss|sass)$/;
 const stylRegex = /\.(styl)$/;
 const sassModuleRegex = /\.module\.(scss|sass)$/;
-const stylModuleRegex = /\.module\.(styl)$/;
 // This is the production and development configuration.
 // It is focused on developer experience, fast rebuilds, and a minimal bundle.
 module.exports = function(webpackEnv) {
@@ -558,19 +557,6 @@ module.exports = function(webpackEnv) {
                   },
                 },
                 'sass-loader'
-              ),
-            },
-            {
-              test: stylModuleRegex,
-              use: getStyleLoaders(
-                {
-                  importLoaders: 3,
-                  sourceMap: isEnvProduction && shouldUseSourceMap,
-                  modules: {
-                    getLocalIdent: getCSSModuleLocalIdent,
-                  },
-                },
-                'stylus-loader'
               ),
             },
             // "file" loader makes sure those assets get served by WebpackDevServer.
