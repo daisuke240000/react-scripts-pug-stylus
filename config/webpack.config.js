@@ -534,7 +534,6 @@ module.exports = function(webpackEnv) {
             },
             {
               test: stylRegex,
-              exclude: stylModuleRegex,
               use: getStyleLoaders(
                 {
                   importLoaders: 3,
